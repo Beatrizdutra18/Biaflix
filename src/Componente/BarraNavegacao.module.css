@@ -1,3 +1,4 @@
+/* BarraNavegacao.module.css */
 .conteiner {
     background-color: #141414;
     padding: 15px 30px;
@@ -5,35 +6,75 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.conteiner ul {
+.menu ul {
     display: flex;
-    gap: 30px;
     list-style: none;
     margin: 0;
     padding: 0;
-    align-items: center;
 }
 
-.conteiner li a {
+.menu li {
+    margin-right: 20px;
+}
+
+.menu li a {
+    color: white; /* Cor branca para os links */
+    text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 8px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease, transform 0.2s ease;
-    padding: 5px 10px;
-    border-radius: 8px;
+    font-weight: 500; /* Deixa o texto um pouco mais forte */
 }
 
-.conteiner li a:hover {
-    color: #e509a3;
-    transform: scale(1.05);
-    background-color: rgba(255, 255, 255, 0.05);
+.menu li a span:first-child {
+    margin-right: 5px;
+    font-size: 1.5rem;
 }
 
-.material-symbols-outlined {
-    font-size: 22px;
+.menu li a:hover {
+    color: #c93196; /* Cor de hover, para quando passar o mouse */
+}
+
+/* Barra de pesquisa */
+.search input {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    width: 250px; /* Aumentei a largura da barra de pesquisa */
+    transition: width 0.3s ease-in-out;
+    color: white; /* Cor do texto dentro da barra de pesquisa */
+    background-color: #333; /* Cor de fundo da barra de pesquisa */
+}
+
+.search input::placeholder {
+    color: white; /* Cor do texto de placeholder (Pesquisar...) */
+}
+
+.search input:focus {
+    width: 350px; /* Aumenta mais a largura quando o campo recebe foco */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: auto;
+    }
+
+    .menu li {
+        margin-bottom: 10px;
+    }
+
+    .search input {
+        width: 100%;
+        margin-top: 10px;
+    }
 }
